@@ -1,0 +1,21 @@
+function customSearch(query, options) {
+  // return Track Objects
+  return [{ id: "1", name: "Title", artists: "Artist", album_name: "Album", duration_ms: 210000, images: "https://..." }];
+}
+
+function download(trackId, quality, outputPath, progressCallback) {
+  // quality = your qualityOptions id like "MP3_320"
+  return { success: true, filePath: outputPath };
+}
+
+function handleURL(url) {
+  return { success: true, type: "track", track: { id: "1", name: "Title", artists: "Artist" } };
+}
+
+function getAlbum(albumId) { return { tracks: [] }; }
+function getLyrics(trackId) { return { lyrics: "..." }; }
+
+registerExtension({
+  initialize, cleanup,
+  customSearch, download, handleURL, getAlbum
+});
