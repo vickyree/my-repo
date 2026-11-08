@@ -1,0 +1,32 @@
+{
+  "name": "vickyree-provider",
+  "displayName": "Vickyree Provider",
+  "version": "1.0.0",
+  "description": "My extension for Mornye",
+  "author": "vickyree",
+  "homepage": "https://github.com/vickyree/my-repo",
+  "icon": "icon.png",
+  "permissions": {
+    "network": ["api.example.com"],
+    "storage": true,
+    "file": true
+  },
+  "type": ["metadata_provider", "download_provider"],
+  "skipMetadataEnrichment": false,
+  "skipBuiltInFallback": false,
+  "qualityOptions": [
+    { "id": "MP3_320", "label": "MP3 320kbps", "description": "High quality MP3" }
+  ],
+  "settings": [
+    { "key": "apiKey", "label": "API Key", "type": "string", "required": true, "secret": true }
+  ],
+  "searchBehavior": {
+    "enabled": true,
+    "placeholder": "Search...",
+    "thumbnailRatio": "square"
+  },
+  "urlHandler": {
+    "enabled": true,
+    "patterns": ["youtube.com/watch", "youtu.be"]
+  }
+}
